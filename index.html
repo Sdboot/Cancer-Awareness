@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthAware - Cancer Education Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .gradient-primary { background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%); }
+        .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold text-purple-600">♥️ HealthAware</div>
+            <nav class="hidden md:flex gap-8">
+                <a href="#home" class="text-gray-700 hover:text-purple-600 font-medium">Home</a>
+                <a href="#features" class="text-gray-700 hover:text-purple-600 font-medium">Features</a>
+                <a href="#resources" class="text-gray-700 hover:text-purple-600 font-medium">Resources</a>
+            </nav>
+            <button onclick="goToSignup()" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Get Started</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                Learn About <span class="text-purple-600">Cancer</span> Prevention
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+                HealthAware helps you understand cancer awareness, prevention strategies, and access healthcare resources with personalized content based on your health profile.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <button onclick="goToSignup()" class="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-bold">Get Started</button>
+                <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})" class="px-8 py-3 border-2 border-gray-300 rounded-lg hover:bg-gray-100 font-bold">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Why Choose HealthAware?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="card-hover p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-4xl mb-3">📚</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Educational Content</h3>
+                    <p class="text-gray-600 text-sm">Learn cancer prevention, warning signs, and lifestyle tips from expert-curated content.</p>
+                </div>
+                <div class="card-hover p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Personalized</h3>
+                    <p class="text-gray-600 text-sm">Content tailored to your health profile. Different for men, women, and others.</p>
+                </div>
+                <div class="card-hover p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-4xl mb-3">🏥</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Healthcare Access</h3>
+                    <p class="text-gray-600 text-sm">Find trusted resources, screening guidelines, and when to see a doctor.</p>
+                </div>
+                <div class="card-hover p-6 bg-gray-50 rounded-lg border border-gray-200">
+                    <div class="text-4xl mb-3">💡</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Daily Insights</h3>
+                    <p class="text-gray-600 text-sm">Get one new cancer awareness fact or prevention tip every day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Tips -->
+    <section id="resources" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Today's Health Tips</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Prevention Tips -->
+            <div class="p-6 bg-white rounded-lg border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">🥗 Nutrition</h3>
+                <p class="text-gray-700 mb-4">A diet rich in fruits, vegetables, and whole grains can help reduce cancer risk. Limit processed foods and red meat.</p>
+                <button onclick="showDetail('nutrition')" class="text-purple-600 font-bold hover:underline">Learn More →</button>
+            </div>
+
+            <div class="p-6 bg-white rounded-lg border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">🏃 Exercise</h3>
+                <p class="text-gray-700 mb-4">Regular physical activity (150+ minutes per week) reduces cancer risk and supports healthy weight and immune function.</p>
+                <button onclick="showDetail('exercise')" class="text-purple-600 font-bold hover:underline">Learn More →</button>
+            </div>
+
+            <div class="p-6 bg-white rounded-lg border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">☀️ Sun Protection</h3>
+                <p class="text-gray-700 mb-4">Use broad-spectrum SPF 30+ sunscreen daily, wear protective clothing, and limit sun exposure during peak hours.</p>
+                <button onclick="showDetail('sun')" class="text-purple-600 font-bold hover:underline">Learn More →</button>
+            </div>
+
+            <div class="p-6 bg-white rounded-lg border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">🚭 Smoking</h3>
+                <p class="text-gray-700 mb-4">Smoking significantly increases cancer risk. If you smoke, talk to your doctor about cessation programs available.</p>
+                <button onclick="showDetail('smoking')" class="text-purple-600 font-bold hover:underline">Learn More →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gender-Specific Content -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Personalized for You</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Women's Content -->
+                <div class="p-6 bg-white rounded-lg border-2 border-pink-400">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-4">👩 For Women</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>✓ Breast cancer awareness & self-examination</li>
+                        <li>✓ Cervical cancer prevention & screening</li>
+                        <li>✓ Mammography guidelines (age 40-50+)</li>
+                        <li>✓ HPV testing information</li>
+                        <li>✓ Women's reproductive health</li>
+                    </ul>
+                </div>
+
+                <!-- Men's Content -->
+                <div class="p-6 bg-white rounded-lg border-2 border-purple-400">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-4">👨 For Men</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>✓ Prostate cancer awareness</li>
+                        <li>✓ Testicular cancer self-examination</li>
+                        <li>✓ PSA testing information</li>
+                        <li>✓ Age-appropriate screening</li>
+                        <li>✓ Men's health prevention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screening Guidelines -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Cancer Screening Guidelines</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 class="text-lg font-bold text-blue-900 mb-4">📋 For Women</h3>
+                <ul class="space-y-2 text-blue-900 text-sm">
+                    <li>• <strong>Mammogram:</strong> Age 40-50+ (discuss with doctor)</li>
+                    <li>• <strong>Pap Smear:</strong> Age 21-65 every 3-5 years</li>
+                    <li>• <strong>HPV Test:</strong> Age 30-65 every 5 years</li>
+                    <li>• <strong>Colorectal:</strong> Age 45+</li>
+                </ul>
+            </div>
+
+            <div class="p-6 bg-purple-50 rounded-lg border border-purple-200">
+                <h3 class="text-lg font-bold text-purple-900 mb-4">📋 For Men</h3>
+                <ul class="space-y-2 text-purple-900 text-sm">
+                    <li>• <strong>PSA Test:</strong> Discuss with doctor age 40-50+</li>
+                    <li>• <strong>DRE:</strong> Digital rectal exam age 50+</li>
+                    <li>• <strong>Testicular:</strong> Monthly self-exam age 15-40</li>
+                    <li>• <strong>Colorectal:</strong> Age 45+</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Disclaimer -->
+    <section class="bg-red-100 py-12 border-t-4 border-red-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="max-w-3xl">
+                <h3 class="text-2xl font-bold text-red-900 mb-4">⚠️ Important Medical Disclaimer</h3>
+                <p class="text-red-900 mb-4">
+                    <strong>This platform provides educational information only</strong> and is not a substitute for professional medical advice, diagnosis, or treatment. It does NOT:
+                </p>
+                <ul class="list-disc list-inside text-red-900 space-y-2 mb-4">
+                    <li>Provide medical diagnoses</li>
+                    <li>Replace professional medical care</li>
+                    <li>Prescribe treatments or medications</li>
+                    <li>Guarantee prevention of any disease</li>
+                </ul>
+                <p class="text-red-900 font-bold">
+                    Always consult a qualified healthcare provider for any health concerns, symptoms, or treatment decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="max-w-7xl mx-auto px-4 py-16 text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Ready to Start Your Health Journey?</h2>
+        <p class="text-xl text-gray-600 mb-8">Get personalized education and cancer awareness content tailored to you.</p>
+        <button onclick="goToSignup()" class="px-10 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-bold text-lg">Create Free Account</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-100 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>© 2026 HealthAware. Educational platform for cancer awareness and prevention.</p>
+            <p class="text-gray-400 mt-2">This is an educational resource. Always consult healthcare providers for medical advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        function goToSignup() {
+            // In a full application, this would navigate to /signup
+            alert('In the full Next.js application, you can sign up and get personalized content!\n\nTo start the development server:\n1. Open terminal\n2. Run: npm install\n3. Run: npm run dev\n4. Visit: http://localhost:3000');
+        }
+
+        function showDetail(topic) {
+            const details = {
+                nutrition: 'Focus on: colorful vegetables, whole grains, lean proteins, healthy fats. Limit: processed meats, added sugars, alcohol. Antioxidants in berries and green tea may offer protective benefits.',
+                exercise: 'Aim for 150 minutes of moderate-intensity exercise weekly. Include both cardio and strength training. Exercise helps maintain healthy weight, boosts immunity, and reduces cancer risk.',
+                sun: 'Use broad-spectrum SPF 30+ sunscreen daily. Wear protective clothing (hats, long sleeves). Limit sun exposure during peak hours (10am-4pm). Check your skin regularly for changes.',
+                smoking: 'Smoking causes 30% of cancer deaths. Secondhand smoke is also harmful. If you smoke, talk to your doctor about nicotine replacement therapy, medications, and support groups.'
+            };
+            alert(details[topic] || 'Learn more about this topic with a healthcare provider.');
+        }
+    </script>
+</body>
+</html>
